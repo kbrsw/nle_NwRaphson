@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="DasOptimization-master">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../Java_LIBS/DasOptimization-master" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../Java_LIBS/DasOptimization-master/src" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../Java_LIBS/DasOptimization-master" recursive="false" />
+  </library>
+</component>
