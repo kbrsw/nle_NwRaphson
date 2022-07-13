@@ -30,6 +30,7 @@ class NLE {
 
             // x(i+1) = x(i) - f(x) / f'(x)
             x = x - h;
+            System.out.print("x = " +x + "\n" );
         }
 
         System.out.print("The value of the"
