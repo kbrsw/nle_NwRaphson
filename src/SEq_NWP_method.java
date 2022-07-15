@@ -1,24 +1,25 @@
-// Newton Raphson Method for solving
-// equations
+// Newton Raphson Method for solving system of equations
 class SEq_NWP_method {
 
-    static double[][] matrixJ = new double[2][2];
-    static double[] xmatrc = new double[2];
+    static double[][] matrixJ = new double[2][2]; //matrix for Jacobian
+    static double[] xmatrc = new double[2]; //matrix for unknowns
     static double[] fmatr = new double[2];
 
-    //    x-vector
+    //    x,y-vector. Set initial guess values
     public static void xmatrix() {
         xmatrc[0] = 5;
         xmatrc[1] = 7;
     }
 
+    //Set system of equations
     public static void fmatrix() {
         fmatr[0] = xmatrc[0] * xmatrc[0] - 2 * xmatrc[0] * xmatrc[1];
         fmatr[1] = 2 * xmatrc[0] + xmatrc[1];
     }
 
-    //    Jacobian
+    //    calculate Jacobian
     public static void Jacobian(double x, double y) {
+        //here we write partial derivatives of given equations
         matrixJ[0][0] = 2 * xmatrc[0] - 2 * xmatrc[1];
         matrixJ[0][1] = -2 * xmatrc[0];
         matrixJ[1][0] = 2;
