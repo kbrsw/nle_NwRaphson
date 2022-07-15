@@ -1,31 +1,13 @@
-import org.apache.commons.math3.analysis.MultivariateFunction;
-import org.apache.commons.math3.analysis.differentiation.JacobianFunction;
-import org.apache.commons.math3.analysis.solvers.NewtonRaphsonSolver;
-import org.ejml.data.Matrix;
-
-// Java program for implementation of
 // Newton Raphson Method for solving
 // equations
 class SEq_NWP_method {
 
-    static final double EPSILON = 0.001;
+    static double[][] matrixJ= new double[2][2];
+
+    public static void Matris(double x, double y) {
 
 
-    static double func2(double x, double y)
-    {
-        return 2* x + y;
-    }
-
-    static double func1(double x, double y)
-    {
-        return x* x -2*x*y;
-    }
-
-    static void Matris (double x, double y) {
-
-        double[][] matrixJ;
-        matrixJ = new double[2][2];
-        matrixJ[0][0] = x * x - 2 * y;
+        matrixJ[0][0] = 2 * x - 2 * y;
         matrixJ[0][1] = -2 * x;
         matrixJ[1][0] = 2;
         matrixJ[1][1] = 1;
@@ -36,14 +18,18 @@ class SEq_NWP_method {
             }
             System.out.println();
         }
-
+    }
+    public static void determinant(){
+        double det = matrixJ[0][0]*matrixJ[1][1]-matrixJ[0][1]*matrixJ[1][0];
+        System.out.println("Determinant is " +det);
     }
 
-public static void main(String[] args){
-        double x0 = 50;
-        double y0 = 50;
-        Matris(x0,y0);
+    public static void main(String[] args) {
+        double x0 = 1;
+        double y0 = 2;
+        Matris(x0, y0);
+        determinant();
 
-        }
+    }
 }
 
